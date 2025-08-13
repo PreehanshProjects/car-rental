@@ -1,0 +1,90 @@
+{
+  "homeNav": "Home",
+  "cars": "Cars",
+  "aboutUs": "About Us",
+  "hero": {
+    "title": "Find Your Perfect Car Today",
+    "subtitle": "Quality vehicles, trusted service, and unbeatable deals — all in one place.",
+    "cta": "Browse Inventory"
+  },
+  "aboutSection": {
+    "title": "Who We Are",
+    "description": "At RentEasy, we are passionate about connecting drivers with reliable and modern vehicles. Our mission is to make car rentals simple, flexible, and affordable for everyone. With years of experience in the car rental industry, we take pride in maintaining a clean fleet, offering flexible plans, and delivering top-notch customer service to ensure every journey is smooth and enjoyable."
+  },
+  "fleet": {
+    "title": "Our Featured Fleet",
+    "bookNow": "Book Now"
+  },
+  "whyChoose": {
+    "title": "Why Rent With Us",
+    "flexiblePlans": "Flexible Rental Plans",
+    "flexiblePlansDesc": "From hourly rentals to long-term leases, we adapt to your schedule.",
+    "fullInsurance": "Full Insurance Coverage",
+    "fullInsuranceDesc": "Drive with peace of mind knowing you're fully covered.",
+    "cleanFleet": "Clean & Maintained Fleet",
+    "cleanFleetDesc": "Every car is inspected, cleaned, and sanitized before each rental.",
+    "support": "24/7 Customer Support",
+    "supportDesc": "Our team is here to help you any time, day or night."
+  },
+  "testimonials": {
+    "title": "What Our Customers Say",
+    "roles": {
+      "tourist": "Tourist",
+      "business": "Business Traveler",
+      "local": "Local Customer"
+    },
+    "reviews": {
+      "sarah": "Booking was simple, the car was spotless, and the staff were incredibly friendly. Highly recommended!",
+      "james": "I rent cars every month for work trips, and this is by far the most reliable company I've used.",
+      "emma": "Flexible rental options and affordable prices — exactly what I needed."
+    }
+  },
+  "stats": {
+    "carsAvailable": "Cars Available",
+    "happyClients": "Happy Renters",
+    "locations": "Rental Locations",
+    "yearsService": "Years in Service"
+  },
+  "cta": {
+    "title": "Ready to Hit the Road?",
+    "subtitle": "Book your rental car today and enjoy flexible, reliable, and affordable service.",
+    "button": "Book Now",
+    "note": "Flexible plans, insured cars, and 24/7 support — satisfaction guaranteed."
+  },
+  "findUs": {
+    "title": "How To Find Us",
+    "phone": "54444444 / 53333333",
+    "email": "contact@carrental.com",
+    "address": "Royal-Road, Main Street near Park, 101010 New-York, USA",
+    "openingHours": {
+      "weekdays": "Mon–Fri: 08:00–18:00",
+      "saturday": "Sat: 09:00–13:00",
+      "sunday": "Sun: Closed"
+    }
+  },
+  "footer": {
+    "brandName": "RentEasy",
+    "contactUs": "Contact Us",
+    "description": "Your trusted partner for fast, reliable, and affordable car rentals. Explore our fleet and drive with confidence.",
+    "socialLinks": {
+      "facebook": "https://facebook.com",
+      "instagram": "https://instagram.com",
+      "twitter": "https://twitter.com",
+      "linkedin": "https://linkedin.com"
+    },
+    "contact": {
+      "phone": "54444444 / 53333333",
+      "email": "contact@renteasy.com",
+      "address": "Royal-Road, Main Street near Park, 101010 New-York, USA"
+    },
+    "usefulLinks": {
+      "links": "Quick Links",
+      "fleet": "Our Fleet",
+      "aboutUs": "About Us",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms & Conditions",
+      "faq": "FAQ"
+    },
+    "copyright": "© {year} RentEasy. All rights reserved."
+  }
+}

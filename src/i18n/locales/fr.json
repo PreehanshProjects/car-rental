@@ -1,0 +1,90 @@
+{
+  "homeNav": "Accueil",
+  "cars": "Voitures",
+  "aboutUs": "À propos de nous",
+  "hero": {
+    "title": "Trouvez votre voiture parfaite dès aujourd'hui",
+    "subtitle": "Des véhicules de qualité, un service de confiance et des offres imbattables — tout en un seul endroit.",
+    "cta": "Voir l'inventaire"
+  },
+  "aboutSection": {
+    "title": "Qui nous sommes",
+    "description": "Chez RentEasy, nous sommes passionnés par la mise en relation des conducteurs avec des véhicules fiables et modernes. Notre mission est de rendre la location de voitures simple, flexible et abordable pour tous. Forts de plusieurs années d'expérience dans l'industrie de la location de voitures, nous sommes fiers de maintenir une flotte propre, d'offrir des plans flexibles et de fournir un service client de premier ordre pour garantir que chaque trajet soit fluide et agréable."
+  },
+  "fleet": {
+    "title": "Notre flotte vedette",
+    "bookNow": "Réserver maintenant"
+  },
+  "whyChoose": {
+    "title": "Pourquoi louer chez nous",
+    "flexiblePlans": "Plans de location flexibles",
+    "flexiblePlansDesc": "De la location horaire aux locations longue durée, nous nous adaptons à votre emploi du temps.",
+    "fullInsurance": "Couverture d'assurance complète",
+    "fullInsuranceDesc": "Conduisez en toute tranquillité d'esprit en sachant que vous êtes entièrement couvert.",
+    "cleanFleet": "Flotte propre et entretenue",
+    "cleanFleetDesc": "Chaque voiture est inspectée, nettoyée et désinfectée avant chaque location.",
+    "support": "Assistance 24/7",
+    "supportDesc": "Notre équipe est là pour vous aider à tout moment, jour et nuit."
+  },
+  "testimonials": {
+    "title": "Ce que nos clients disent",
+    "roles": {
+      "tourist": "Touriste",
+      "business": "Voyageur d'affaires",
+      "local": "Client local"
+    },
+    "reviews": {
+      "sarah": "La réservation était simple, la voiture impeccable et le personnel incroyablement sympathique. Hautement recommandé !",
+      "james": "Je loue des voitures chaque mois pour des voyages professionnels, et c'est de loin l'entreprise la plus fiable que j'ai utilisée.",
+      "emma": "Des options de location flexibles et des prix abordables — exactement ce dont j'avais besoin."
+    }
+  },
+  "stats": {
+    "carsAvailable": "Voitures disponibles",
+    "happyClients": "Clients satisfaits",
+    "locations": "Agences de location",
+    "yearsService": "Années de service"
+  },
+  "cta": {
+    "title": "Prêt à prendre la route ?",
+    "subtitle": "Réservez votre voiture de location dès aujourd'hui et profitez d'un service flexible, fiable et abordable.",
+    "button": "Réserver maintenant",
+    "note": "Plans flexibles, voitures assurées et assistance 24/7 — satisfaction garantie."
+  },
+  "findUs": {
+    "title": "Comment nous trouver",
+    "phone": "54444444 / 53333333",
+    "email": "contact@carrental.com",
+    "address": "Royal-Road, rue principale près du parc, 101010 New-York, USA",
+    "openingHours": {
+      "weekdays": "Lun–Ven : 08:00–18:00",
+      "saturday": "Sam : 09:00–13:00",
+      "sunday": "Dim : Fermé"
+    }
+  },
+  "footer": {
+    "brandName": "RentEasy",
+    "contactUs": "Contactez-nous",
+    "description": "Votre partenaire de confiance pour des locations de voitures rapides, fiables et abordables. Explorez notre flotte et conduisez en toute confiance.",
+    "socialLinks": {
+      "facebook": "https://facebook.com",
+      "instagram": "https://instagram.com",
+      "twitter": "https://twitter.com",
+      "linkedin": "https://linkedin.com"
+    },
+    "contact": {
+      "phone": "54444444 / 53333333",
+      "email": "contact@renteasy.com",
+      "address": "Royal-Road, rue principale près du parc, 101010 New York, USA"
+    },
+    "usefulLinks": {
+      "links": "Liens rapides",
+      "fleet": "Notre flotte",
+      "aboutUs": "À propos de nous",
+      "privacyPolicy": "Politique de confidentialité",
+      "termsOfService": "Conditions générales",
+      "faq": "FAQ"
+    },
+    "copyright": "© {year} RentEasy. Tous droits réservés."
+  }
+}
