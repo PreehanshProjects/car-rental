@@ -1,13 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Menu, Sun, Moon, X, Home, Car, Info } from "lucide-react";
+import { Menu, X, Home, Car } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
   const location = useLocation(); // to track current path
 
   const changeLanguage = (lng: string) => {
@@ -23,7 +22,7 @@ export default function Navbar() {
   return (
     <nav
       className={`w-full fixed top-0 z-50 animated-gradient-bg shadow-lg transition-colors duration-300 ${
-        darkMode ? "text-gray-100" : "text-gray-900"
+        mobileOpen ? "bg-white" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">

@@ -9,11 +9,7 @@ type Props = {
   pricePerDay: number;
 };
 
-export default function BookingFormSection({
-  carId,
-  carName,
-  pricePerDay,
-}: Props) {
+export default function BookingFormSection({ carName, pricePerDay }: Props) {
   const [startDate, setStartDate] = useState<string>("");
   const [endDate, setEndDate] = useState<string>("");
   const [passengers, setPassengers] = useState<number>(1);

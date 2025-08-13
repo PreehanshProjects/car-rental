@@ -12,10 +12,6 @@ type Car = {
   images: string[];
 };
 
-type Props = {
-  car: Car;
-};
-
 export default function CarDetailsSection({ car }: { car: Car }) {
   const [currentImage, setCurrentImage] = useState(0);
 
