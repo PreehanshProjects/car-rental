@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Menu, X, Home, Car } from "lucide-react";
+import { Menu, X, Home, Car, LogIn } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
 
 export default function Navbar() {
@@ -17,11 +17,12 @@ export default function Navbar() {
   const navItems = [
     { name: t("home"), path: "/", icon: <Home size={18} /> },
     { name: t("cars"), path: "/cars", icon: <Car size={18} /> },
+    { name: t("login"), path: "/login", icon: <LogIn size={18} /> },
   ];
 
   return (
     <nav
-      className={`w-full fixed top-0 z-50 animated-gradient-bg shadow-lg transition-colors duration-300 ${
+      className={`w-full fixed top-0 z-50 animated-gradient-bg shadow-lg transition-colors duration-300 mb-20${
         mobileOpen ? "bg-white" : "bg-transparent"
       }`}
     >
