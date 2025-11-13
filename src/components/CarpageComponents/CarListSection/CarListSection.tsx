@@ -5,7 +5,7 @@ type Car = {
   name: string;
   type: string;
   seats: number;
-  price: number;
+  pricePerDay: number;
   images: string[];
 };
 

@@ -8,7 +8,7 @@ type Car = {
   name: string;
   type: string;
   seats: number;
-  price: number;
+  pricePerDay: number;
   images: string[];
 };
 
@@ -36,7 +36,7 @@ export default function CarCard({ car }: Props) {
         </div>
         <div className="flex items-center gap-2 text-yellow-500 font-semibold">
           <DollarSign size={18} />
-          <span>${car.price}/day</span>
+          <span>${car.pricePerDay}/day</span>
         </div>
         <button
           onClick={handleBookNow}

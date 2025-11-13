@@ -1,7 +1,7 @@
-// BookingFormSection.tsx
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Users } from "lucide-react";
+import { useAuth } from "../../../context/AuthContext";
 
 type Props = {
   carId: number;
@@ -9,15 +9,77 @@ type Props = {
   pricePerDay: number;
 };
 
-export default function BookingFormSection({ carName, pricePerDay }: Props) {
+export default function BookingFormSection({
+  carId,
+  carName,
+  pricePerDay,
+}: Props) {
+  const { user } = useAuth();
+
   const [startDate, setStartDate] = useState<string>("");
   const [endDate, setEndDate] = useState<string>("");
   const [passengers, setPassengers] = useState<number>(1);
   const [insurance, setInsurance] = useState<boolean>(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Compute totalDays and totalPrice dynamically
+  const totalDays =
+    startDate && endDate
+      ? Math.ceil(
+          (new Date(endDate).getTime() - new Date(startDate).getTime()) /
+            (1000 * 3600 * 24)
+        )
+      : 1;
+
+  const totalPrice = totalDays * pricePerDay;
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Booking ${carName} from ${startDate} to ${endDate}`);
+
+    if (!user) {
+      setError("You must be logged in to book a car.");
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+    setSuccess(null);
+
+    try {
+      const res = await fetch("http://localhost:5046/api/Bookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          carId,
+          customerName: user.fullName,
+          customerEmail: user.email,
+          startDate: new Date(startDate).toISOString(),
+          endDate: new Date(endDate).toISOString(),
+          totalPrice,
+          // Optional: passengers and insurance if backend supports
+          passengers,
+          insurance,
+        }),
+      });
+
+      if (!res.ok) {
+        const errData = await res.json();
+        throw new Error(errData?.Message || "Booking failed");
+      }
+
+      setSuccess("Booking confirmed!");
+      setStartDate("");
+      setEndDate("");
+      setPassengers(1);
+      setInsurance(false);
+    } catch (err: any) {
+      console.error(err);
+      setError(err.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -30,6 +92,9 @@ export default function BookingFormSection({ carName, pricePerDay }: Props) {
       <h2 className="text-2xl font-bold text-primary-600 mb-6">
         Book {carName}
       </h2>
+
+      {error && <p className="text-red-600 mb-3">{error}</p>}
+      {success && <p className="text-green-600 mb-3">{success}</p>}
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Dates */}
@@ -98,25 +163,15 @@ export default function BookingFormSection({ carName, pricePerDay }: Props) {
 
         {/* Total Price */}
         <div className="text-lg font-semibold mt-2">
-          Total Price:{" "}
-          <span className="text-primary-600">
-            $
-            {pricePerDay *
-              (endDate && startDate
-                ? Math.ceil(
-                    (new Date(endDate).getTime() -
-                      new Date(startDate).getTime()) /
-                      (1000 * 3600 * 24)
-                  )
-                : 1)}
-          </span>
+          Total Price: <span className="text-primary-600">${totalPrice}</span>
         </div>
 
         <button
           type="submit"
-          className="w-full py-3 bg-primary-600 text-white rounded-full font-semibold mt-4 hover:bg-primary-700 transition"
+          disabled={loading}
+          className="w-full py-3 bg-primary-600 text-white rounded-full font-semibold mt-4 hover:bg-primary-700 transition disabled:opacity-70 disabled:cursor-not-allowed"
         >
-          Confirm Booking
+          {loading ? "Booking..." : "Confirm Booking"}
         </button>
       </form>
     </motion.section>

@@ -1,23 +1,40 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Menu, X, Home, Car, LogIn } from "lucide-react";
+import { Menu, X, Home, Car, LogIn, LogOut } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
+import { useAuth } from "../../../context/AuthContext";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation(); // to track current path
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { user, logout } = useAuth(); // get auth state
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
     setMobileOpen(false);
   };
 
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+    setMobileOpen(false);
+  };
+
+  // Dynamically build nav items
   const navItems = [
     { name: t("home"), path: "/", icon: <Home size={18} /> },
     { name: t("cars"), path: "/cars", icon: <Car size={18} /> },
-    { name: t("login"), path: "/login", icon: <LogIn size={18} /> },
+    user
+      ? {
+          name: t("logout"),
+          path: "/logout",
+          icon: <LogOut size={18} />,
+          onClick: handleLogout,
+        }
+      : { name: t("login"), path: "/login", icon: <LogIn size={18} /> },
   ];
 
   return (
@@ -36,7 +53,15 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
-            return (
+            return item.onClick ? (
+              <button
+                key={item.path}
+                onClick={item.onClick}
+                className="flex items-center gap-1 px-3 py-2 rounded-md transition-all hover:text-blue-600"
+              >
+                {item.icon} {item.name}
+              </button>
+            ) : (
               <Link
                 key={item.path}
                 to={item.path}
@@ -102,7 +127,15 @@ export default function Navbar() {
       >
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;
-          return (
+          return item.onClick ? (
+            <button
+              key={item.path}
+              onClick={item.onClick}
+              className="flex items-center gap-1 px-3 py-2 rounded-md transition-all hover:text-blue-600"
+            >
+              {item.icon} {item.name}
+            </button>
+          ) : (
             <Link
               key={item.path}
               onClick={() => setMobileOpen(false)}

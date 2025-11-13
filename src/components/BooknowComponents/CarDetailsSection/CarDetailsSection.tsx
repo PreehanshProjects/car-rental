@@ -8,7 +8,7 @@ type Car = {
   name: string;
   type: string;
   seats: number;
-  price: number;
+  pricePerDay: number;
   images: string[];
 };
 
@@ -58,7 +58,7 @@ export default function CarDetailsSection({ car }: { car: Car }) {
           </div>
         </div>
         <p className="text-2xl font-extrabold text-yellow-500">
-          ${car.price}/day
+          ${car.pricePerDay}/day
         </p>
       </div>
     </section>
